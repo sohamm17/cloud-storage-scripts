@@ -1,0 +1,112 @@
+100 379.600
+10 33.586
+20 65.608
+30 123.027
+40 187.775
+50 207.217
+60 246.920
+100 203.403
+100 248.980
+100 205.058
+100 210.651
+100 236.784
+100 213.031
+10 25.914
+10 26.816
+10 33.352
+10 22.163
+10 22.017
+10 21.182
+20 57.085
+20 37.144
+20 60.934
+20 39.237
+20 39.859
+20 50.612
+30 64.219
+30 63.645
+30 57.638
+30 67.336
+30 64.946
+30 78.571
+40 75.434
+40 71.274
+40 90.986
+40 73.774
+40 113.977
+40 79.398
+50 95.024
+50 102.048
+50 95.551
+50 87.834
+50 93.357
+50 110.347
+60 106.127
+60 104.524
+60 114.542
+60 124.029
+60 139.493
+60 112.617
+100 430.456
+100 com.dropbox.core.DbxException$ServerError: {"error": "Internal Server Error"}
+	at com.dropbox.core.DbxRequestUtil.unexpectedStatus(DbxRequestUtil.java:209)
+	at com.dropbox.core.DbxClient.chunkedUploadAppend(DbxClient.java:1068)
+	at com.dropbox.core.DbxClient.chunkedUploadAppend(DbxClient.java:1012)
+	at Dropbox.uploadFileTest(Dropbox.java:306)
+	at Main.<init>(Main.java:323)
+	at Main.main(Main.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:58)
+Oops! Something bad happened. I have failed for 1 time(s). I'll try once again.
+341.463
+100 No Test files found in test directory. Test cannot continue.
+2.273
+100 402.164
+100 329.509
+100 389.762
+100 310.367
+10 34.365
+10 62.015
+10 32.212
+10 47.740
+10 50.770
+10 82.848
+10 52.560
+20 91.039
+20 82.145
+20 106.092
+20 123.793
+20 79.630
+20 84.056
+20 125.670
+30 168.566
+30 142.838
+30 142.781
+30 198.129
+30 113.382
+30 144.049
+30 118.327
+40 195.311
+40 198.259
+40 191.041
+40 180.547
+40 139.108
+40 136.951
+40 164.256
+50 271.919
+50 204.907
+50 189.802
+50 179.743
+50 204.875
+50 227.673
+50 237.307
+60 329.929
+60 330.763
+60 293.933
+60 374.915
+60 322.841
+60 354.856
+60 349.758

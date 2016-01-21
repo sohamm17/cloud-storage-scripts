@@ -1,0 +1,196 @@
+100 Host key verification failed.
+lost connection
+0.967
+100 Host key verification failed.
+lost connection
+0.447
+100 Host key verification failed.
+lost connection
+0.441
+100 Host key verification failed.
+lost connection
+0.445
+100 Host key verification failed.
+lost connection
+0.441
+100 Host key verification failed.
+lost connection
+0.442
+100 Host key verification failed.
+lost connection
+0.432
+10 Host key verification failed.
+lost connection
+0.470
+10 Host key verification failed.
+lost connection
+0.444
+10 Host key verification failed.
+lost connection
+0.430
+10 Host key verification failed.
+lost connection
+0.444
+10 Host key verification failed.
+lost connection
+0.444
+10 Host key verification failed.
+lost connection
+0.444
+10 Host key verification failed.
+lost connection
+0.446
+20 Host key verification failed.
+lost connection
+0.442
+20 Host key verification failed.
+lost connection
+0.444
+20 Host key verification failed.
+lost connection
+0.446
+20 Host key verification failed.
+lost connection
+0.441
+20 Host key verification failed.
+lost connection
+0.445
+20 Host key verification failed.
+lost connection
+0.446
+20 Host key verification failed.
+lost connection
+0.443
+30 Host key verification failed.
+lost connection
+0.448
+30 Host key verification failed.
+lost connection
+0.448
+30 Host key verification failed.
+lost connection
+0.440
+30 Host key verification failed.
+lost connection
+0.441
+30 Host key verification failed.
+lost connection
+0.455
+30 Host key verification failed.
+lost connection
+0.439
+30 Host key verification failed.
+lost connection
+0.599
+40 Host key verification failed.
+lost connection
+0.443
+40 Host key verification failed.
+lost connection
+0.443
+40 Host key verification failed.
+lost connection
+0.423
+40 Host key verification failed.
+lost connection
+0.441
+40 Host key verification failed.
+lost connection
+0.423
+40 Host key verification failed.
+lost connection
+0.446
+40 Host key verification failed.
+lost connection
+0.443
+50 Host key verification failed.
+lost connection
+0.791
+50 Host key verification failed.
+lost connection
+0.447
+50 Host key verification failed.
+lost connection
+0.443
+50 Host key verification failed.
+lost connection
+0.452
+50 Host key verification failed.
+lost connection
+0.444
+50 Host key verification failed.
+lost connection
+0.441
+50 Host key verification failed.
+lost connection
+0.445
+60 Host key verification failed.
+lost connection
+0.446
+60 Host key verification failed.
+lost connection
+0.440
+60 Host key verification failed.
+lost connection
+0.443
+60 Host key verification failed.
+lost connection
+0.425
+60 Host key verification failed.
+lost connection
+0.441
+60 Host key verification failed.
+lost connection
+0.449
+60 Host key verification failed.
+lost connection
+0.450
+100 112.484
+100 112.757
+100 113.033
+100 112.324
+100 113.014
+100 114.729
+100 112.892
+10 12.595
+10 12.513
+10 12.383
+10 12.345
+10 12.417
+10 12.495
+10 12.596
+20 24.404
+20 23.578
+20 23.609
+20 24.018
+20 23.954
+20 71.721
+20 23.576
+30 34.364
+30 35.099
+30 34.730
+30 34.769
+30 34.695
+30 34.982
+30 34.892
+40 45.857
+40 45.819
+40 46.102
+40 45.960
+40 45.943
+40 46.096
+40 46.129
+50 107.200
+50 57.442
+50 57.187
+50 57.132
+50 57.599
+50 57.180
+50 57.078
+60 68.490
+60 68.000
+60 68.390
+60 74.195
+60 68.336
+60 68.426
+60 68.254
