@@ -4,7 +4,7 @@ Dropbox	100	upload	577829
 Dropbox	100	upload	318259	
 Dropbox	100	upload	366827	
 Dropbox	100	upload	392490	
-Dropbox	Dropbox	100	upload	391478	
+Dropbox	100	upload	391478	
 Dropbox	10	upload	60514	
 Dropbox	10	upload	52652	
 Dropbox	10	upload	32568	
