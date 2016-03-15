@@ -19,9 +19,9 @@ linestyles = [':', '--', '-', '-.', '-.', '--' ]
 hatches = ['/', ' ', '*',  '/', '+', 'o', '\\', '|', '-', 'O', '+']
 
 x = [10, 20, 30, 40, 50, 60, 100]
-labels = [#"UCLA to GoogleDrive (Direct)", "UCLA to Coldlake", "Coldlake to GoogleDrive", "UCLA to UMich", "UMich to GoogleDrive", 
-	"UBC to Dropbox (Direct)", "UBC to UofA", "UofA to Dropbox", "UBC to Dropbox (UofA-cut-through)",
-	#"UCLA to OneDrive (Direct)", "UCLA to Coldlake", "Coldlake to OneDrive", "UCLA to UMich", "UMich to OneDrive"
+labels = [#"UBC to GoogleDrive (Direct)", "UBC to Coldlake", "Coldlake to GoogleDrive", "UBC to UofA", "UofA to GoogleDrive", 
+	"UBC to One Drive (Direct)", "UBC to UofA", "UofA to One Drive", "UBC to One Drive (UofA-cut-through)",
+	#"UBC to OneDrive (Direct)", "UBC to Coldlake", "Coldlake to OneDrive", "UBC to UofA", "UofA to OneDrive"
 	]
 stream = 'upload'
 bar_width = 0.50
@@ -48,7 +48,7 @@ directsds = []
 
 for filesz in x:
 	values = []
-	with open("../GoogleDriveDirectUCLA.txt") as f:
+	with open("../GoogleDriveDirectUBC.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -74,7 +74,7 @@ intersds = []
 
 for filesz in x:
 	values = []
-	with open("../GoogleDriveInterUCLAToColdlake.txt") as f:
+	with open("../GoogleDriveInterUBCToColdlake.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -96,7 +96,7 @@ remotesds = []
 
 for filesz in x:
 	values = []
-	with open("../GoogleDriveInterNodeUCLACold.txt") as f:
+	with open("../GoogleDriveInterNodeUBCCold.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -120,7 +120,7 @@ intersds = []
 
 for filesz in x:
 	values = []
-	with open("../GoogleDriveInterUCLAToUMich.txt") as f:
+	with open("../GoogleDriveInterUBCToUofA.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -142,7 +142,7 @@ remotesds = []
 
 for filesz in x:
 	values = []
-	with open("../GoogleDriveInterNodeUCLAUMich.txt") as f:
+	with open("../GoogleDriveInterNodeUBCUofA.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -160,7 +160,7 @@ rects.append(ax.bar(ind + bar_width * bar, remoteavgs, bar_width,
                  ecolor='black', bottom = interavgs, hatch=hatches[j]))
 
 '''
-'''*******************************************************************Dropbox************************************************************************'''
+'''*******************************************************************One Drive************************************************************************'''
 
 
 j += 1
@@ -170,7 +170,7 @@ directsds = []
 
 for filesz in x:
 	values = []
-	with open("DropDirectUofA.txt") as f:
+	with open("OneDirectUofA.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -180,8 +180,8 @@ for filesz in x:
 	directavgs.append(st.median(values[2:7])/1000)
 	directsds.append(st.stdev(values[2:7])/1000)
 
-print(directavgs)
-print(directsds)
+#print(directavgs)
+#print(directsds)
 
 
 rects.append(ax.bar(ind + bar_width * bar, directavgs, bar_width,
@@ -199,7 +199,7 @@ intersds = []
 
 for filesz in x:
 	values = []
-	with open("DropUofAInter.txt") as f:
+	with open("OneUofAInter.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -208,8 +208,8 @@ for filesz in x:
 	interavgs.append(st.median(values[2:7])/1000)
 	intersds.append(st.stdev(values[2:7])/1000)
 
-print(interavgs)
-print(intersds)
+#print(interavgs)
+#print(intersds)
 
 rects.append(ax.bar(ind + bar_width * bar, interavgs, bar_width,
                  color=colors[j], hatch=hatches[j]))
@@ -224,7 +224,7 @@ remotesds = []
 
 for filesz in x:
 	values = []
-	with open("DropUofARemote.txt") as f:
+	with open("OneUofARemote.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -250,7 +250,7 @@ directsds = []
 
 for filesz in x:
 	values = []
-	with open("DropUofAInterWorm.txt") as f:
+	with open("OneUofAInterWorm.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -259,11 +259,9 @@ for filesz in x:
 	directavgs.append(st.median(values[2:7])/1000)
 	directsds.append(st.stdev(values[2:7])/1000)
 
-print(directavgs)
-print(directsds)
+#print(directavgs)
+#print(directsds)
 
-for i in range(0, 7):
-	print(x[i], "&", "%.2f" % interavgs[i], "&", "%.2f" % remoteavgs[i], "&", "%.2f" % directavgs[i], "\\\\\\hline")
 
 rects.append(ax.bar(ind + bar_width * bar, directavgs, bar_width,
                  color=colors[j], hatch=hatches[j]))
@@ -271,6 +269,23 @@ rects.append(ax.bar(ind + bar_width * bar, directavgs, bar_width,
 (_, caps, _) = ax.errorbar(ind + bar_width/2 * (bar + 3), directavgs, yerr=directsds, ecolor='black', elinewidth=4.0, fmt=None, capsize=7)
 
 thickcap(caps)
+
+rmct = []
+rmctsds = []
+
+for filesz in x:
+	values = []
+	with open("OneUofARemoteCutThrough.txt") as f:
+		for line in f:
+			lineValues = line.split('\t')
+			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
+				continue
+			values.append(float(lineValues[3]))
+	rmct.append(st.median(values[2:7])/1000)
+	rmctsds.append(st.stdev(values[2:7])/1000)
+
+print(rmct)
+print(rmctsds)
 
 '''*************************************************************************One Drive******************************************************************************'''
 
@@ -282,7 +297,7 @@ directsds = []
 
 for filesz in x:
 	values = []
-	with open("OneDirectUCLAColdlake.txt") as f:
+	with open("OneDirectUBCColdlake.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -308,7 +323,7 @@ intersds = []
 
 for filesz in x:
 	values = []
-	with open("OneColdInter_UCLA.txt") as f:
+	with open("OneColdInter_UBC.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -330,7 +345,7 @@ remotesds = []
 
 for filesz in x:
 	values = []
-	with open("OneColdRemoteUCLA.txt") as f:
+	with open("OneColdRemoteUBC.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -354,7 +369,7 @@ intersds = []
 
 for filesz in x:
 	values = []
-	with open("OneUMichInter_UCLA.txt") as f:
+	with open("OneUofAInter_UBC.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -376,7 +391,7 @@ remotesds = []
 
 for filesz in x:
 	values = []
-	with open("OneUMichRemoteUCLA.txt") as f:
+	with open("OneUofARemoteUBC.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -406,7 +421,7 @@ ax.tick_params(labelsize=26)
 ax.set_xticks(ind + bar_width * (bar + 1) / 2)
 fig.subplots_adjust(right=0.99)
 fig.subplots_adjust(left=0.108)
-ax.legend(rects, labels, prop={'size':'22'},loc='upper center', bbox_to_anchor=(0.38, 1.01), ncol=1, fancybox=True, shadow=True)
+ax.legend(rects, labels, prop={'size':'22'},loc='upper center', bbox_to_anchor=(0.44, 0.99), ncol=1, fancybox=True, shadow=True)
 
 #plt.show()
-plt.savefig("./ubc_dropbox_cut_uofa.pdf", bbox_inches='tight', dpi=60000)
+plt.savefig("./ubc_one_cut_uofa.pdf", bbox_inches='tight', dpi=60000)

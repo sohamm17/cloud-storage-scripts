@@ -20,7 +20,7 @@ hatches = ['/', ' ', '*',  '/', '+', 'o', '\\', '|', '-', 'O', '+']
 
 x = [10, 20, 30, 40, 50, 60, 100]
 labels = [#"UCLA to GoogleDrive (Direct)", "UCLA to Coldlake", "Coldlake to GoogleDrive", "UCLA to UMich", "UMich to GoogleDrive", 
-	"UBC to Dropbox (Direct)", "UBC to UofA", "UofA to Dropbox", "UBC to Dropbox (UofA-cut-through)",
+	"UBC to Google Drive (Direct)", "UBC to UMich", "UMich to Google Drive", "UBC to Google Drive (UMich-cut-through)",
 	#"UCLA to OneDrive (Direct)", "UCLA to Coldlake", "Coldlake to OneDrive", "UCLA to UMich", "UMich to OneDrive"
 	]
 stream = 'upload'
@@ -170,7 +170,7 @@ directsds = []
 
 for filesz in x:
 	values = []
-	with open("DropDirectUofA.txt") as f:
+	with open("GoogDirectUMich.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -199,7 +199,7 @@ intersds = []
 
 for filesz in x:
 	values = []
-	with open("DropUofAInter.txt") as f:
+	with open("GoogUMichInter.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -224,7 +224,7 @@ remotesds = []
 
 for filesz in x:
 	values = []
-	with open("DropUofARemote.txt") as f:
+	with open("GoogUMichRemote.txt") as f:
 		for line in f:
 			lineValues = line.split('\t')
 			if lineValues[2] != stream or (int)(lineValues[1]) != filesz:
@@ -233,8 +233,16 @@ for filesz in x:
 	remoteavgs.append(st.median(values[2:7])/1000)
 	remotesds.append(st.stdev(values[2:7])/1000)
 
-print(remoteavgs)
-print(remotesds)
+#print(remoteavgs)
+#print(remotesds)
+
+detour = np.array(interavgs)+np.array(remoteavgs)
+direct = np.array(directavgs)
+print(detour)
+print(direct-detour)
+#print("Benefit of only Detour:")
+detourpercent = 100*(detour-direct)/direct
+#print(100*(detour-direct)/direct)
 
 rects.append(ax.bar(ind + bar_width * bar, remoteavgs, bar_width,
                  color=colors[j], bottom = interavgs, hatch=hatches[j]))
@@ -250,7 +258,7 @@ directsds = []
 
 for filesz in x:
 	values = []
-	with open("DropUofAInterWorm.txt") as f:
+	with open("GoogUMichInterWorm.txt") as f:
 		for line in f:
 			lineValues = line.strip().split(' ')
 			if (int)(lineValues[0]) != filesz:
@@ -259,11 +267,18 @@ for filesz in x:
 	directavgs.append(st.median(values[2:7])/1000)
 	directsds.append(st.stdev(values[2:7])/1000)
 
-print(directavgs)
-print(directsds)
+#print(directavgs)
+#print(directsds)
+
+detourcut = np.array(directavgs)
+print(detourcut)
+print(direct-detourcut)
+#print("Benefit of only Detour with Cut-through:")
+detourcutpercent = 100*(detourcut-direct)/direct
+#print(100*(detourcut-direct)/direct)
 
 for i in range(0, 7):
-	print(x[i], "&", "%.2f" % interavgs[i], "&", "%.2f" % remoteavgs[i], "&", "%.2f" % directavgs[i], "\\\\\\hline")
+	print("&", "%+.2f" % detourpercent[i], "&", "%+.2f" % detourcutpercent[i], "\\\\\\hline")
 
 rects.append(ax.bar(ind + bar_width * bar, directavgs, bar_width,
                  color=colors[j], hatch=hatches[j]))
@@ -406,7 +421,7 @@ ax.tick_params(labelsize=26)
 ax.set_xticks(ind + bar_width * (bar + 1) / 2)
 fig.subplots_adjust(right=0.99)
 fig.subplots_adjust(left=0.108)
-ax.legend(rects, labels, prop={'size':'22'},loc='upper center', bbox_to_anchor=(0.38, 1.01), ncol=1, fancybox=True, shadow=True)
+ax.legend(rects, labels, prop={'size':'22'},loc='upper center', bbox_to_anchor=(0.44, 0.97), ncol=1, fancybox=True, shadow=True)
 
 #plt.show()
-plt.savefig("./ubc_dropbox_cut_uofa.pdf", bbox_inches='tight', dpi=60000)
+plt.savefig("./umich_google_cut_upload.pdf", bbox_inches='tight', dpi=60000)

@@ -236,6 +236,14 @@ for filesz in x:
 print(remoteavgs)
 print(remotesds)
 
+detour = np.array(interavgs)+np.array(remoteavgs)
+direct = np.array(directavgs)
+print(detour)
+print(direct-detour)
+#print("Benefit of only Detour:")
+detourpercent = 100*(detour-direct)/direct
+#print(100*(detour-direct)/direct)
+
 rects.append(ax.bar(ind + bar_width * bar, remoteavgs, bar_width,
                  color=colors[j], bottom = interavgs, hatch=hatches[j]))
 
@@ -262,6 +270,15 @@ for filesz in x:
 print(directavgs)
 print(directsds)
 
+detourcut = np.array(directavgs)
+print(detourcut)
+print(direct-detourcut)
+#print("Benefit of only Detour with Cut-through:")
+detourcutpercent = 100*(detourcut-direct)/direct
+#print(100*(detourcut-direct)/direct)
+
+for i in range(0, 7):
+	print(x[i], "&", "%.2f" % detourpercent[i], "&", "%.2f" % detourcutpercent[i], "\\\\\\hline")
 
 rects.append(ax.bar(ind + bar_width * bar, directavgs, bar_width,
                  color=colors[j], hatch=hatches[j]))
@@ -404,7 +421,7 @@ ax.tick_params(labelsize=26)
 ax.set_xticks(ind + bar_width * (bar + 1) / 2)
 fig.subplots_adjust(right=0.99)
 fig.subplots_adjust(left=0.108)
-ax.legend(rects, labels, prop={'size':'24'},loc='upper center', bbox_to_anchor=(0.36, 0.97), ncol=1, fancybox=True, shadow=True)
+ax.legend(rects, labels, prop={'size':'22'},loc='upper center', bbox_to_anchor=(0.42, 0.97), ncol=1, fancybox=True, shadow=True)
 
-plt.show()
-#plt.savefig("/home/sohamgrad/Documents/GradSchool/Research/MS/december-paper/figures/ucla_dropbox_upload.pdf", bbox_inches='tight', dpi=60000)
+#plt.show()
+plt.savefig("./ubc_google_cut_uofa.pdf", bbox_inches='tight', dpi=60000)

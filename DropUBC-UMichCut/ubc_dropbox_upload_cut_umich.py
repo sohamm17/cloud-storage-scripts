@@ -262,6 +262,8 @@ for filesz in x:
 print(directavgs)
 print(directsds)
 
+for i in range(0, 7):
+	print(x[i], "&", "%.2f" % interavgs[i], "&", "%.2f" % remoteavgs[i], "&", "%.2f" % directavgs[i], "\\\\\\hline")
 
 rects.append(ax.bar(ind + bar_width * bar, directavgs, bar_width,
                  color=colors[j], hatch=hatches[j]))
@@ -404,7 +406,7 @@ ax.tick_params(labelsize=26)
 ax.set_xticks(ind + bar_width * (bar + 1) / 2)
 fig.subplots_adjust(right=0.99)
 fig.subplots_adjust(left=0.108)
-ax.legend(rects, labels, prop={'size':'24'},loc='upper center', bbox_to_anchor=(0.33, 0.97), ncol=1, fancybox=True, shadow=True)
+ax.legend(rects, labels, prop={'size':'22'},loc='upper center', bbox_to_anchor=(0.42, 0.97), ncol=1, fancybox=True, shadow=True)
 
-plt.show()
-#plt.savefig("/home/sohamgrad/Documents/GradSchool/Research/MS/december-paper/figures/ucla_dropbox_upload.pdf", bbox_inches='tight', dpi=60000)
+#plt.show()
+plt.savefig("./ubc_dropbox_cut_umich.pdf", bbox_inches='tight', dpi=60000)
